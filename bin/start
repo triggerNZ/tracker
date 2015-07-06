@@ -1,0 +1,14 @@
+#!/bin/sh
+
+ROOT=$HOME/.tracker
+
+PROJECT="$1"
+
+if [ -f $ROOT/$PROJECT ] && grep "UNFINISHED" $ROOT/$PROJECT >/dev/null ; then
+    echo "Already started"
+    exit 1
+fi
+
+echo "Starting tracking $PROJECT"
+echo $(date +"%Y-%m-%dT%H:%M:%SZ") UNFINISHED >> $ROOT/$PROJECT
+	

@@ -1,0 +1,11 @@
+#!/bin/sh
+
+ROOT=$HOME/.tracker
+
+if [ ! -e $ROOT ]; then
+    echo "Initialising tracker in $ROOT"
+    mkdir $ROOT
+else
+    echo "Tracker directory already initialised"
+fi
+	
